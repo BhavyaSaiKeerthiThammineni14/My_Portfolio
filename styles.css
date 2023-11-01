@@ -212,7 +212,7 @@ section {
 }
 
 #certifications {
-  background: #CCCCFF;
+   /* background: #CCCCFF; */
   animation: fadeIn 1s ease-in-out;
 }
 
