@@ -92,36 +92,581 @@ section {
 }
 
 #about {
-  /* background: #CCCCFF; */
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
 }
 
+.about-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Project section */
 #projects {
-  /* background: #CCCCFF; */
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
 }
 
+.project {
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 #achievements{
-  /* background: #CCCCFF; */
+	background: #CCCCFF;
+  animation: fadeIn 1s ease-in-out;
+}
+ .achievement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeInScale 1s ease-in-out;
+  overflow: hidden;
+}
+
+.achievement-image {
+  position: relative;
+  width: 220px; /* Adjust the size as needed */
+  height: 180px;
+  overflow: hidden;
+  border-radius: 15px; /* Adjust the border-radius to control the roundness of the corners */
+}
+
+.achievement-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.achievement:hover .achievement-img {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+.achievement-description {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+}
+
+.sticky-note-achievement {
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+  background-color: #CF9FFF; /* Change to your preferred contrast color */
+  overflow: hidden;
+}
+
+.spiral-achievement {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  animation: spiralRotate 3s infinite linear;
+}
+
+.sticky-note-achievement h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+#positions {
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
 }
 
-#positions {
-  /* background: #CCCCFF; */
-  animation: fadeIn 1s ease-in-out;
+#positions .project {
+  /* Styles for each position item */
 }
 
 #internships {
-  /* background: #CCCCFF; */
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
+}
+
+#internships .certification {
+  /* Styles for each internship item */
 }
 
 #certifications {
-  /* background: #CCCCFF; */
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
 }
 
+.certification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeInScale 1s ease-in-out;
+  overflow: hidden;
+}
+
+/* Animation for certification images on hover */
+.certification:hover .certification-image img {
+  transform: scale(1.1); /* Enlarge the image on hover */
+  filter: brightness(1.2); /* Increase brightness on hover */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animation for certification descriptions on hover */
+.certification:hover .certification-description {
+  transform: translateY(-10px); /* Move description up slightly on hover */
+  transition: transform 0.3s ease;
+}
+
+
+.certification-img {
+  max-width: 350px; /* Adjust the size as needed */
+  height: 250px;
+  border-radius: 5px;
+  background-color: #fff; /* Background color for the image container */
+}
+
+.certification-description {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+}
+
+.sticky-note {
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+  background-color: #CF9FFF; /* Change to your preferred contrast color */
+  overflow: hidden;
+}
+
+.spiral {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  animation: spiralRotate 3s infinite linear;
+}
+
+.sticky-note h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spiralRotate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+/* CSS for enlarged certification image */
+.enlarged {
+  z-index: 2; /* Bring the enlarged image to the front */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for overlay */
+  cursor: zoom-out; /* Change cursor to indicate it can be clicked to close */
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden;
+}
+
+.enlarged.active {
+  opacity: 1; /* Show the enlarged image */
+  visibility: visible;
+}
+/* CSS for the lightbox container */
+.lightbox-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* CSS for the lightbox content */
+.lightbox-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* CSS for the enlarged image */
+.enlarged-certification {
+  max-width: 90%;
+  max-height: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CSS for the close button */
+.close-lightbox {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
 #contact {
-  /* background: #CCCCFF; */
+  background: #CCCCFF;
   animation: fadeIn 1s ease-in-out;
 }
+
+#contact h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p,
+#contact a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #000;
+}
+.email-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.email-button:hover {
+  background-color: #45a049;
+}
+#contact a {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #ffd700;
+}
+
+/* Popup styles */
+/* Your existing styles for popups */
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.profile {
+  max-width: 150px;
+  max-height: 150px;
+  margin-right: 20px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.profile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Your existing CSS styles */
+
+/* CSS for the lightbox container */
+.lightbox-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* CSS for the lightbox content */
+.lightbox-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* CSS for the enlarged image */
+.enlarged-achievement {
+  max-width: 90%;
+  max-height: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CSS for the close button */
+.close-lightbox {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+/* Footer styles */
+footer {
+  background: #CCCCFF;
+  color: #000;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-contact p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #000;
+  text-decoration: none;
+  
+  
+}
+.email-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.email-button:hover {
+  background-color: #45a049;
+}
+
+.footer-social a {
+  margin-right: 1rem;
+}
+
+.footer-social img {
+  vertical-align: middle;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+/* Add this meta tag to the head of your HTML file to ensure proper rendering and scaling on all devices */
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+/* Modify your existing CSS to make the website responsive */
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .quick-links {
+    margin-top: 1rem;
+  }
+
+  .quick-links ul {
+    display: block;
+    text-align: center;
+  }
+
+  .quick-links li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-text,
+  .project,
+  .achievement,
+  .certification,
+  .light-box-container,
+  #contact {
+    padding: 1rem;
+  }
+
+  .certification-img,
+  .achievement-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Additional adjustments for even smaller screens */
+@media only screen and (max-width: 480px) {
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-text,
+  .project,
+  .achievement,
+  .certification,
+  #contact {
+    padding: 0.5rem;
+  }
+}
+
+/* Other CSS remains the same */
